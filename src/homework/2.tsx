@@ -16,12 +16,8 @@ const initialState: State = {
 // };
 
 type Action = {
-  type: 'START_REQUEST'
-  type: 'PENDING_REQUEST'
-  type: 'FINISH_REQUEST'
-  type: 'RESET_REQUEST'
-
-}
+  type: string;
+ }
 
 function requestReducer(state: State, action: Action): State {
   switch (action.type) {
@@ -38,7 +34,7 @@ function requestReducer(state: State, action: Action): State {
   }
 }
 
-export function RequestComponent() {
+function RequestComponent() {
   const [requestState, requestDispatch] = useReducer(requestReducer, initialState);
 
   const startRequest = () => {
